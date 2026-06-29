@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="light scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziad Tarek | End-to-End Engineering</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="carousel.css">
+
+    <!-- Tailwind Config for Custom Colors & Fonts -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            blue: '#2563eb',
+                            purple: '#8a2be2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300 font-sans antialiased overflow-x-hidden relative">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-neon-purple/20 blur-[120px] animate-breathe"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-neon-blue/20 blur-[120px] animate-breathe-delayed">
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Ziad Tarek Logo"
+                    class="w-14 h-14 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col hidden sm:flex">
+                    <span class="font-bold text-lg leading-tight tracking-tight">Ziad Tarek</span>
+                    <span
+                        class="text-[10px] text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase">Engineering</span>
+                </div>
+            </div>
+
+            <ul class="hidden lg:flex items-center gap-6 text-sm font-bold glass-effect px-8 py-3 rounded-full border border-slate-200/50 dark:border-slate-700/50 shadow-sm">
+                <li><a href="#hero" class="nav-link text-neon-blue transition-colors" data-i18n="nav_home">الرئيسية</a></li>
+                <li><a href="#services" class="nav-link text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_services">خدماتنا</a></li>
+                <li><a href="#process" class="nav-link text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_process">آلية العمل</a></li>
+                <li><a href="#portfolio" class="nav-link text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_portfolio">أعمالنا</a></li>
+                <li><a href="#contact" class="nav-link text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_contact">تواصل معنا</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <button id="langToggle"
+                    class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition flex items-center gap-2 text-sm font-semibold">
+                    <i data-lucide="globe" class="w-5 h-5"></i>
+                    <span id="langText">EN</span>
+                </button>
+                <button id="themeToggle" class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition">
+                    <i data-lucide="moon" id="themeIcon" class="w-5 h-5"></i>
+                </button>
+                <a href="#contact"
+                    class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-slate-900 dark:bg-slate-50 text-slate-50 dark:text-slate-900 font-semibold hover:scale-105 transition-transform text-sm"
+                    data-i18n="nav_contact">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20">
+        <!-- Hero Section -->
+        <section id="hero" class="scroll-mt-20 max-w-7xl mx-auto px-6 pt-8 pb-20 text-center flex flex-col items-center">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-neon-blue/30 text-neon-blue text-sm font-medium mb-8 animate-fade-in-up">
+                <span class="relative flex h-3 w-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-blue opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-neon-blue"></span>
+                </span>
+                <span data-i18n="hero_badge"></span>
+            </div>
+
+            <h1
+                class="text-5xl md:text-7xl tracking-tight mb-8 leading-tight max-w-5xl animate-fade-in-up delay-100">
+                <span data-i18n="hero_title_1" class="font-medium text-slate-800 dark:text-slate-200 inline-block mb-4 md:mb-6"></span>
+                <br />
+                <span
+                    class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple inline-block pb-4"
+                    data-i18n="hero_title_gradient"></span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mb-12 animate-fade-in-up delay-200 leading-relaxed"
+                data-i18n="hero_subtitle"></p>
+
+            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+                <a href="#contact"
+                    class="btn-shimmer px-8 py-4 rounded-full bg-slate-900 dark:bg-slate-50 text-slate-50 dark:text-slate-900 font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_35px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2"
+                    data-i18n="btn_start"></a>
+                <a href="#services"
+                    class="px-8 py-4 rounded-full glass-effect border border-slate-300 dark:border-slate-700 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center justify-center gap-2"
+                    data-i18n="btn_browse"></a>
+            </div>
+        </section>
+
+        <!-- Social Proof Banner -->
+        <div
+            class="w-full border-y border-slate-200/50 dark:border-slate-800/50 glass-effect py-6 overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row items-center justify-center gap-3">
+                <i data-lucide="shield-check" class="w-5 h-5 text-neon-purple"></i>
+                <p class="text-slate-500 dark:text-slate-400 font-medium tracking-wide">
+                    <span data-i18n="social_proof"></span>
+                </p>
+                <i data-lucide="shield-check" class="w-5 h-5 text-neon-purple hidden md:block"></i>
+            </div>
+        </div>
+
+        <!-- Image Modal -->
+        <div id="imageModal" class="modal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+
+        <!-- Services Grid -->
+        <section id="services" class="scroll-mt-20 max-w-7xl mx-auto px-6 pt-6 pb-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4" data-i18n="services_title"></h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto" data-i18n="services_subtitle"></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- AI & Data -->
+                <div
+                    class="service-card glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 hover:border-neon-blue/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="brain-circuit" class="w-7 h-7 text-neon-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_ai_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="srv_ai_desc"></p>
+                </div>
+
+                <!-- Frontend -->
+                <div
+                    class="service-card glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 hover:border-neon-purple/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layout-template" class="w-7 h-7 text-neon-purple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_front_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="srv_front_desc"></p>
+                </div>
+
+                <!-- Backend -->
+                <div
+                    class="service-card glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 hover:border-neon-blue/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="server" class="w-7 h-7 text-neon-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_back_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="srv_back_desc"></p>
+                </div>
+
+                <!-- Cloud -->
+                <div
+                    class="service-card glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 hover:border-neon-purple/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="cloud-cog" class="w-7 h-7 text-neon-purple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_cloud_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="srv_cloud_desc"></p>
+                </div>
+
+                <!-- UI/UX -->
+                <div
+                    class="service-card glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 hover:border-neon-blue/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="pen-tool" class="w-7 h-7 text-neon-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_ui_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="srv_ui_desc"></p>
+                </div>
+
+                <!-- QA -->
+                <div
+                    class="service-card glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 hover:border-neon-purple/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-alert" class="w-7 h-7 text-neon-purple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_qa_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="srv_qa_desc"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="scroll-mt-20 max-w-5xl mx-auto px-6 pt-6 pb-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4" data-i18n="process_title"></h2>
+                <p class="text-slate-600 dark:text-slate-400" data-i18n="process_subtitle"></p>
+            </div>
+
+            <div
+                class="relative border-r-2 md:border-r-0 md:border-t-2 border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between gap-10 md:gap-4 pt-0 md:pt-10 pr-6 md:pr-0">
+
+                <div class="relative w-full text-right md:text-center">
+                    <div
+                        class="absolute w-6 h-6 rounded-full bg-neon-blue right-[-31px] md:right-auto md:left-1/2 md:top-[-52px] md:-translate-x-1/2 flex items-center justify-center ring-4 ring-slate-50 dark:ring-slate-950">
+                        <div class="w-2 h-2 rounded-full bg-white"></div>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-neon-blue">01</h4>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="proc_1_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="proc_1_desc"></p>
+                </div>
+
+                <div class="relative w-full text-right md:text-center">
+                    <div
+                        class="absolute w-6 h-6 rounded-full bg-neon-purple right-[-31px] md:right-auto md:left-1/2 md:top-[-52px] md:-translate-x-1/2 flex items-center justify-center ring-4 ring-slate-50 dark:ring-slate-950">
+                        <div class="w-2 h-2 rounded-full bg-white"></div>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-neon-purple">02</h4>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="proc_2_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="proc_2_desc"></p>
+                </div>
+
+                <div class="relative w-full text-right md:text-center">
+                    <div
+                        class="absolute w-6 h-6 rounded-full bg-neon-blue right-[-31px] md:right-auto md:left-1/2 md:top-[-52px] md:-translate-x-1/2 flex items-center justify-center ring-4 ring-slate-50 dark:ring-slate-950">
+                        <div class="w-2 h-2 rounded-full bg-white"></div>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-neon-blue">03</h4>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="proc_3_title"></h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm" data-i18n="proc_3_desc"></p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Selected Works (Placeholders) -->
+        <section id="portfolio" class="scroll-mt-20 max-w-7xl mx-auto px-6 pt-6 pb-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4" data-i18n="works_title"></h2>
+                    <p class="text-slate-600 dark:text-slate-400" data-i18n="works_subtitle"></p>
+                </div>
+            </div>
+
+            <div class="projects-carousel relative z-10 mb-16">
+                <!-- Navigation Arrows -->
+                <button class="carousel-btn prev-btn"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+                <button class="carousel-btn next-btn"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="projects-track">
+                        <!-- Projects will be injected here dynamically by script.js -->
+                    </div>
+                </div>
+
+                <!-- Dots Navigation -->
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="scroll-mt-20 max-w-7xl mx-auto px-6 pt-6 pb-24 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center" data-i18n="contact_title"></h2>
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch max-w-5xl mx-auto">
+                
+                <!-- Contact Info & Direct Links -->
+                <div class="flex-1 glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 flex flex-col justify-center text-slate-700 dark:text-slate-300">
+                    <div class="flex items-center gap-4 mb-8 text-lg font-medium">
+                        <div class="w-12 h-12 shrink-0 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-neon-blue">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <span data-i18n="contact_email_value" class="break-all"></span>
+                    </div>
+                    <div class="flex items-center gap-4 mb-10 text-lg font-medium">
+                        <div class="w-12 h-12 shrink-0 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-neon-purple">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <span data-i18n="contact_loc_value"></span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 mt-auto">
+                        <!-- WhatsApp Button -->
+                        <a href="https://wa.me/201212508828" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-lg transition-all hover:scale-105 shadow-lg shadow-[#25D366]/30">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            <span data-i18n="btn_whatsapp"></span>
+                        </a>
+                        <!-- Telegram Button -->
+                        <a href="https://t.me/ziadtarek73" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-[#0088cc] hover:bg-[#0077b3] text-white font-bold text-lg transition-all hover:scale-105 shadow-lg shadow-[#0088cc]/30">
+                            <i data-lucide="send" class="w-6 h-6"></i>
+                            <span data-i18n="btn_telegram"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="flex-1 glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 flex flex-col gap-4">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="55029fd8-8e77-4f6b-a9fe-445c981d24e0">
+
+                    <!-- Form Inputs -->
+                    <input type="text" name="name" data-i18n-placeholder="contact_name" class="w-full p-4 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors" required>
+                    <input type="email" name="email" data-i18n-placeholder="contact_email" class="w-full p-4 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors" required>
+                    <textarea name="message" data-i18n-placeholder="contact_msg" rows="5" class="w-full p-4 rounded-xl bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors resize-none" required></textarea>
+
+                    <!-- Web3Forms Options -->
+                    <input type="hidden" name="subject" value="New message from Company Website">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+                    <button type="submit" class="btn-shimmer mt-2 w-full py-4 rounded-xl bg-slate-900 dark:bg-slate-50 text-slate-50 dark:text-slate-900 font-bold text-lg hover:scale-105 transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)]" data-i18n="contact_btn"></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200/50 dark:border-slate-800/50 glass-effect relative z-10">
+        <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 dark:text-slate-400 text-sm" data-i18n="footer_copy"></p>
+            <div class="flex items-center gap-4 text-slate-400">
+                <a href="#" class="hover:text-neon-blue transition-colors"><i data-lucide="linkedin"
+                        class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-neon-purple transition-colors"><i data-lucide="github"
+                        class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
