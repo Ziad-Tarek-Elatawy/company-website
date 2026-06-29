@@ -330,6 +330,16 @@ function startAutoPlay() {
     autoPlayInterval = setInterval(() => goToSlide(currentSlideIndex + 1), 6000);
 }
 
+// Global helpers for inline mobile arrow buttons
+function prevSlide() {
+    goToSlide(currentSlideIndex - 1);
+}
+
+function nextSlide() {
+    goToSlide(currentSlideIndex + 1);
+}
+
+
 function setupModal() {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
