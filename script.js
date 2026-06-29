@@ -262,7 +262,11 @@ function renderProjectsCarousel(lang) {
                     <img src="${project.image}" alt="${langData.title}" class="slide-img">
                 </div>
                 <div class="slide-info">
-                    <h3 class="slide-title">${langData.title}</h3>
+                    <div class="slide-title-row">
+                        <button class="slide-arrow-btn slide-prev-inline" onclick="prevSlide()" aria-label="Previous">&#8249;</button>
+                        <h3 class="slide-title">${langData.title}</h3>
+                        <button class="slide-arrow-btn slide-next-inline" onclick="nextSlide()" aria-label="Next">&#8250;</button>
+                    </div>
                     <p class="text-sm opacity-80 max-w-md mx-auto">${langData.description}</p>
                     <div class="project-tech mt-3">
                         ${techSpans}

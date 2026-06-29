@@ -155,6 +155,38 @@
     padding: 18px 10px 5px;
 }
 
+/* Title row with inline arrows (shown only on mobile via media query) */
+.slide-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.slide-arrow-btn {
+    display: none; /* hidden by default, shown on mobile */
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #3b82f6;
+    border: 2px solid #8b5cf6;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: 0.25s;
+    box-shadow: 0 0 10px rgba(59,130,246,0.5);
+}
+
+.slide-arrow-btn:hover {
+    background: #8b5cf6;
+    transform: scale(1.12);
+}
+
 .slide-title {
     font-size: 1.35rem;
     margin-bottom: 8px;
@@ -239,7 +271,7 @@
 /* Mobile Responsiveness for Carousel */
 @media screen and (max-width: 768px) {
     .projects-carousel {
-        padding: 0 0 55px 0;
+        padding: 0;
     }
     .carousel-track {
         min-height: 400px;
@@ -264,30 +296,21 @@
     }
     .slide-title {
         font-size: 1.1rem;
+        margin-bottom: 0;
     }
     .slide-info p {
         font-size: 0.83rem;
     }
-    /* Fix arrows to bottom of carousel, below slide content */
+    /* Hide global floating arrows on mobile */
     .carousel-btn {
-        width: 42px;
-        height: 42px;
-        top: auto;
-        bottom: 0;
-        transform: translateY(0) !important;
+        display: none !important;
     }
-    .carousel-btn:hover {
-        transform: scale(1.1) !important;
-    }
-    .prev-btn {
-        left: calc(50% - 55px);
-    }
-    .next-btn {
-        right: calc(50% - 55px);
+    /* Show inline arrows next to title */
+    .slide-arrow-btn {
+        display: flex;
     }
     .carousel-dots {
-        margin-top: 0;
-        padding-bottom: 0;
+        margin-top: 6px;
         gap: 8px;
     }
     .carousel-dots .dot {
