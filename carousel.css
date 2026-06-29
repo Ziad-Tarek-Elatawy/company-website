@@ -165,7 +165,7 @@
 }
 
 .slide-arrow-btn {
-    display: none; /* hidden by default, shown on mobile */
+    display: none !important; /* hidden on desktop, overridden on mobile */
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -307,7 +307,7 @@
     }
     /* Show inline arrows next to title */
     .slide-arrow-btn {
-        display: flex;
+        display: flex !important;
     }
     .carousel-dots {
         margin-top: 6px;
