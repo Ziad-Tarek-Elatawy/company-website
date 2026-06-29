@@ -14,24 +14,36 @@ const mobileMenu = document.getElementById('mobileMenu');
 const menuIcon = document.getElementById('menuIcon');
 
 function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
-    menuIcon.setAttribute('data-lucide', 'menu');
-    lucide.createIcons();
+    if (mobileMenu) {
+        mobileMenu.style.display = 'none';
+        menuIcon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+    }
 }
 
 if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-        const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileMenu.style.display === 'block';
         if (isOpen) {
-            mobileMenu.classList.add('hidden');
+            mobileMenu.style.display = 'none';
             menuIcon.setAttribute('data-lucide', 'menu');
         } else {
-            mobileMenu.classList.remove('hidden');
+            mobileMenu.style.display = 'block';
             menuIcon.setAttribute('data-lucide', 'x');
         }
         lucide.createIcons();
     });
 }
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (mobileMenu && mobileMenu.style.display === 'block') {
+        if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            closeMobileMenu();
+        }
+    }
+});
 
 // Dictionaries
 const translations = {

@@ -239,10 +239,10 @@
 /* Mobile Responsiveness for Carousel */
 @media screen and (max-width: 768px) {
     .projects-carousel {
-        padding: 0 10px;
+        padding: 0 0 55px 0;
     }
     .carousel-track {
-        min-height: 420px;
+        min-height: 400px;
     }
     .carousel-slide {
         width: 88%;
@@ -257,38 +257,37 @@
         opacity: 0.15;
     }
     .slide-visual {
-        max-height: 260px;
+        max-height: 240px;
     }
     .slide-img {
-        max-height: 260px;
+        max-height: 240px;
     }
     .slide-title {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
     .slide-info p {
-        font-size: 0.85rem;
+        font-size: 0.83rem;
     }
-    /* Move arrows to sides but lower so they don't overlap image */
+    /* Fix arrows to bottom of carousel, below slide content */
     .carousel-btn {
-        width: 34px;
-        height: 34px;
+        width: 42px;
+        height: 42px;
         top: auto;
-        bottom: 8px;
-        transform: none !important;
+        bottom: 0;
+        transform: translateY(0) !important;
     }
     .carousel-btn:hover {
         transform: scale(1.1) !important;
     }
     .prev-btn {
-        left: 2px;
-        bottom: 8px;
+        left: calc(50% - 55px);
     }
     .next-btn {
-        right: 2px;
-        bottom: 8px;
+        right: calc(50% - 55px);
     }
     .carousel-dots {
-        margin-top: 4px;
+        margin-top: 0;
+        padding-bottom: 0;
         gap: 8px;
     }
     .carousel-dots .dot {
