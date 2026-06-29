@@ -268,15 +268,24 @@
     .slide-info p {
         font-size: 0.85rem;
     }
+    /* Move arrows to sides but lower so they don't overlap image */
     .carousel-btn {
-        width: 35px;
-        height: 35px;
+        width: 34px;
+        height: 34px;
+        top: auto;
+        bottom: 8px;
+        transform: none !important;
+    }
+    .carousel-btn:hover {
+        transform: scale(1.1) !important;
     }
     .prev-btn {
         left: 2px;
+        bottom: 8px;
     }
     .next-btn {
         right: 2px;
+        bottom: 8px;
     }
     .carousel-dots {
         margin-top: 4px;

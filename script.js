@@ -8,6 +8,31 @@ const themeIcon = document.getElementById('themeIcon');
 const langToggle = document.getElementById('langToggle');
 const langText = document.getElementById('langText');
 
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuIcon = document.getElementById('menuIcon');
+
+function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    menuIcon.setAttribute('data-lucide', 'menu');
+    lucide.createIcons();
+}
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        if (isOpen) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.setAttribute('data-lucide', 'menu');
+        } else {
+            mobileMenu.classList.remove('hidden');
+            menuIcon.setAttribute('data-lucide', 'x');
+        }
+        lucide.createIcons();
+    });
+}
+
 // Dictionaries
 const translations = {
     ar: {

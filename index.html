@@ -73,9 +73,9 @@
                 <li><a href="#contact" class="nav-link text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_contact">تواصل معنا</a></li>
             </ul>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
                 <button id="langToggle"
-                    class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition flex items-center gap-2 text-sm font-semibold">
+                    class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition flex items-center gap-1 text-sm font-semibold">
                     <i data-lucide="globe" class="w-5 h-5"></i>
                     <span id="langText">EN</span>
                 </button>
@@ -85,7 +85,22 @@
                 <a href="#contact"
                     class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-slate-900 dark:bg-slate-50 text-slate-50 dark:text-slate-900 font-semibold hover:scale-105 transition-transform text-sm"
                     data-i18n="nav_contact">تواصل معنا</a>
+                <!-- Hamburger Button (Mobile Only) -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition">
+                    <i data-lucide="menu" class="w-6 h-6" id="menuIcon"></i>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden glass-effect border-t border-slate-200/50 dark:border-slate-800/50 px-6 py-4">
+            <ul class="flex flex-col gap-4 text-base font-bold">
+                <li><a href="#hero" class="nav-link block py-2 text-neon-blue" data-i18n="nav_home" onclick="closeMobileMenu()">الرئيسية</a></li>
+                <li><a href="#services" class="nav-link block py-2 text-slate-600 dark:text-slate-300" data-i18n="nav_services" onclick="closeMobileMenu()">خدماتنا</a></li>
+                <li><a href="#process" class="nav-link block py-2 text-slate-600 dark:text-slate-300" data-i18n="nav_process" onclick="closeMobileMenu()">آلية العمل</a></li>
+                <li><a href="#portfolio" class="nav-link block py-2 text-slate-600 dark:text-slate-300" data-i18n="nav_portfolio" onclick="closeMobileMenu()">أعمالنا</a></li>
+                <li><a href="#contact" class="nav-link block py-2 text-slate-600 dark:text-slate-300" data-i18n="nav_contact" onclick="closeMobileMenu()">تواصل معنا</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -293,11 +308,11 @@
                 
                 <!-- Contact Info & Direct Links -->
                 <div class="flex-1 glass-effect rounded-3xl p-8 border border-slate-200/50 dark:border-slate-800/50 flex flex-col justify-center text-slate-700 dark:text-slate-300">
-                    <div class="flex items-center gap-4 mb-8 text-lg font-medium">
+                    <div class="flex items-center gap-4 mb-8">
                         <div class="w-12 h-12 shrink-0 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-neon-blue">
                             <i data-lucide="mail" class="w-6 h-6"></i>
                         </div>
-                        <span data-i18n="contact_email_value" class="break-all"></span>
+                        <span data-i18n="contact_email_value" class="text-sm md:text-base font-medium text-slate-700 dark:text-slate-300"></span>
                     </div>
                     <div class="flex items-center gap-4 mb-10 text-lg font-medium">
                         <div class="w-12 h-12 shrink-0 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-neon-purple">
