@@ -263,9 +263,9 @@ function renderProjectsCarousel(lang) {
                 </div>
                 <div class="slide-info">
                     <div class="slide-title-row">
-                        <button class="slide-arrow-btn slide-prev-inline" onclick="prevSlide()" aria-label="Previous">&#8249;</button>
+                        <button class="slide-arrow-btn slide-prev-inline" aria-label="Previous">&#8249;</button>
                         <h3 class="slide-title">${langData.title}</h3>
-                        <button class="slide-arrow-btn slide-next-inline" onclick="nextSlide()" aria-label="Next">&#8250;</button>
+                        <button class="slide-arrow-btn slide-next-inline" aria-label="Next">&#8250;</button>
                     </div>
                     <p class="text-sm opacity-80 max-w-md mx-auto">${langData.description}</p>
                     <div class="project-tech mt-3">
@@ -275,7 +275,22 @@ function renderProjectsCarousel(lang) {
             </div>
         `;
         track.insertAdjacentHTML('beforeend', slideHTML);
-        
+
+        // Add touch + click events to inline buttons after inserting HTML
+        const slides = track.querySelectorAll('.carousel-slide');
+        const lastSlide = slides[slides.length - 1];
+        const prevBtn = lastSlide.querySelector('.slide-prev-inline');
+        const nextBtn = lastSlide.querySelector('.slide-next-inline');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goToSlide(currentSlideIndex - 1); });
+            prevBtn.addEventListener('touchend', (e) => { e.preventDefault(); e.stopPropagation(); goToSlide(currentSlideIndex - 1); });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goToSlide(currentSlideIndex + 1); });
+            nextBtn.addEventListener('touchend', (e) => { e.preventDefault(); e.stopPropagation(); goToSlide(currentSlideIndex + 1); });
+        }
+
         if (dotsContainer) {
             const dot = document.createElement('span');
             dot.classList.add('dot');
@@ -288,6 +303,7 @@ function renderProjectsCarousel(lang) {
     goToSlide(currentSlideIndex);
     setupModal();
 }
+
 
 function updateDots() {
     const dotsContainer = document.querySelector('.carousel-dots');
