@@ -224,7 +224,8 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: -15px;
+    margin-top: 20px;
+    padding-bottom: 10px;
 }
 
 .carousel-dots .dot {
